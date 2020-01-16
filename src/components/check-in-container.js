@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class checkInContainer extends Component {
+export default class CheckInContainer extends Component {
   render() {
     return (
       <div>
