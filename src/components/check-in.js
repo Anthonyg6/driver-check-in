@@ -48,15 +48,15 @@ export default class CheckIn extends Component {
           deliveryTypes: [...this.state.deliveryTypes, data.data],
           truckTypes: [...this.state.truckTypes, data.data],
           checkInTimes: [...this.state.checkInTimes, data.data],
-          //   checkOutTimes: [...this.state.checkOutTime, data.data],
+          checkOutTimes: [...this.state.checkOutTime, data.data],
           _id: "",
           date: "",
           driverName: "",
           carrier: "",
           deliveryType: "",
           truckType: "",
-          checkInTime: "",
-          checkOutTime: ""
+          checkInTime: ""
+          //   checkOutTime: ""
         });
       })
       .catch(error => {
@@ -69,8 +69,8 @@ export default class CheckIn extends Component {
       carrier: "",
       deliveryType: "Delivery",
       truckType: "LTL",
-      checkInTime: moment().format("LT")
-      //   checkOutTime: ""
+      checkInTime: moment().format("LT"),
+      checkOutTime: ""
     });
   }
 
