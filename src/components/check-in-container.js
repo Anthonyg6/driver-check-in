@@ -9,29 +9,15 @@ export default class CheckInContainer extends Component {
       data: []
     };
 
+    this.updateApi = this.updateApi.bind(this);
+    this.getDriverCheckIn = this.getDriverCheckIn.bind(this);
     // this.updateCheckOutTime = this.updateCheckOutTime.bind(this);
   }
 
-  //   getDriverCheckIn() {
-  //     setInterval(() => {
-  //       axios
-  //         .get("http://localhost:4000/check-in")
-  //         .then(response => {
-  //           console.log(response);
-  //           this.setState({
-  //             data: response.data
-  //           });
-  //         })
-  //         .catch(error => {
-  //           console.log(error);
-  //         }, 2000);
-  //     });
-  //   }
   getDriverCheckIn() {
     axios
       .get("http://localhost:4000/check-in")
       .then(response => {
-        console.log(response);
         this.setState({
           data: response.data
         });
@@ -41,24 +27,33 @@ export default class CheckInContainer extends Component {
       });
   }
 
+  updateApi() {
+    setInterval(this.getDriverCheckIn, 2000);
+  }
+
   componentDidMount() {
-    this.getDriverCheckIn();
+    this.updateApi();
   }
 
   componentWillUnmount() {
-    this.getDriverCheckIn();
+    clearInterval(this.updateApi);
   }
 
   checkInItems() {
     return this.state.data.map(items => {
       return (
         <div className="driver-items" key={items._id}>
-          {this.state.data}
+          <span>{items.date}</span>
+          <span>{items.driverName}</span>
+          <span>{items.carrier}</span>
+          <span>{items.deliveryType}</span>
+          <span>{items.truckType}</span>
+          <span>{items.checkInTime}</span>
         </div>
       );
     });
   }
   render() {
-    return <div>{this.getDriverCheckIn()}</div>;
+    return <div>{this.checkInItems()}</div>;
   }
 }
