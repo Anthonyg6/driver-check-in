@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import axios from "axios";
+import moment from "moment";
 
 export default class CheckInContainer extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       data: []
     };
 
     this.updateApi = this.updateApi.bind(this);
+    this.updateCheckOutTime = this.updateCheckOutTime.bind(this);
     this.getDriverCheckIn = this.getDriverCheckIn.bind(this);
-    // this.updateCheckOutTime = this.updateCheckOutTime.bind(this);
   }
 
   getDriverCheckIn() {
@@ -28,7 +29,21 @@ export default class CheckInContainer extends Component {
   }
 
   updateApi() {
-    setInterval(this.getDriverCheckIn, 2000);
+    // setInterval(this.getDriverCheckIn, 2000);
+    this.getDriverCheckIn();
+  }
+
+  //attempt to fix this. Try passing function call from check-in
+  updateCheckOutTime(_id) {
+    event.preventDefault();
+    axios
+      .put(`http://localhost:4000/check-in/${_id}`, {
+        checkOutTime: moment().format("LT")
+      })
+      .then(console.log("Updated Check Out Time"))
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   componentDidMount() {
@@ -49,6 +64,12 @@ export default class CheckInContainer extends Component {
           <span>{items.deliveryType}</span>
           <span>{items.truckType}</span>
           <span>{items.checkInTime}</span>
+          <button
+            className="driver checkout"
+            onClick={() => this.updateCheckOutTime(items._id)}
+          >
+            CheckOut
+          </button>
         </div>
       );
     });

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
 import axios from "axios";
+import CheckInContainer from "./check-in-container";
 
 export default class CheckIn extends Component {
   constructor() {
@@ -19,6 +20,7 @@ export default class CheckIn extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.checkOut = this.checkOut.bind(this);
   }
 
   handleSubmit() {
@@ -35,7 +37,7 @@ export default class CheckIn extends Component {
         deliveryType: this.state.deliveryType,
         truckType: this.state.truckType,
         checkInTime: this.state.checkInTime,
-        // checkOutTime: this.state.checkOutTime,
+        checkOutTime: this.state.checkOutTime,
         done: false
       }
     })
@@ -55,8 +57,8 @@ export default class CheckIn extends Component {
           carrier: "",
           deliveryType: "",
           truckType: "",
-          checkInTime: ""
-          //   checkOutTime: ""
+          checkInTime: "",
+          checkOutTime: ""
         });
       })
       .catch(error => {
@@ -77,12 +79,6 @@ export default class CheckIn extends Component {
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
-    });
-  }
-
-  checkOut(event) {
-    this.setState({
-      checkOutTime: moment().format("LT")
     });
   }
 
@@ -129,6 +125,7 @@ export default class CheckIn extends Component {
           </select>
           <button className="form-btn">Submit</button>
         </form>
+        <CheckInContainer />
       </div>
     );
   }
