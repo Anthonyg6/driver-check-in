@@ -33,17 +33,20 @@ export default class CheckInContainer extends Component {
     this.getDriverCheckIn();
   }
 
-  //attempt to fix this. Try passing function call from check-in
-  updateCheckOutTime(_id) {
+  updateCheckOutTime(_id, index) {
     event.preventDefault();
     axios
       .put(`http://localhost:4000/check-in/${_id}`, {
         checkOutTime: moment().format("LT")
       })
-      .then(console.log("Updated Check Out Time"))
+      .then(console.log("Checkout time was updated"))
       .catch(error => {
         console.log(error);
       });
+    // creates a copy of the state array so we can just remove an item from the array once the driver has checked out without deleting the actual data from the database
+    const data = Object.assign([], this.state.data);
+    data.splice(index, 1);
+    this.setState({ data: data });
   }
 
   componentDidMount() {
