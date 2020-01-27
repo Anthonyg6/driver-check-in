@@ -29,8 +29,8 @@ export default class CheckInContainer extends Component {
   }
 
   updateApi() {
-    // setInterval(this.getDriverCheckIn, 2000);
-    this.getDriverCheckIn();
+    setInterval(this.getDriverCheckIn, 2000);
+    // this.getDriverCheckIn();
   }
 
   updateCheckOutTime(_id, index) {
@@ -61,7 +61,6 @@ export default class CheckInContainer extends Component {
     return this.state.data.map(items => {
       return (
         <div className="driver-items" key={items._id}>
-          <span>{items.date}</span>
           <span>{items.driverName}</span>
           <span>{items.carrier}</span>
           <span>{items.deliveryType}</span>

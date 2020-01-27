@@ -1,0 +1,19 @@
+.header {
+  padding: 15px;
+  //   padding-top: 20px;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(171, 167, 167);
+  color: white;
+  .header-link {
+    float: right;
+    padding-right: 20px;
+    display: block;
+    text-decoration: none;
+    color: white;
+  }
+  .contact {
+    float: left;
+    padding-left: 20px;
+  }
+}
