@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import moment from "moment";
+import moment, { relativeTimeThreshold } from "moment";
 import axios from "axios";
 import CheckInContainer from "./check-in-container";
 
@@ -15,7 +15,8 @@ export default class CheckIn extends Component {
       deliveryType: "Delivery",
       truckType: "LTL",
       checkInTime: moment().format("LT"),
-      checkOutTime: ""
+      checkOutTime: "",
+      isCheckedIn: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -37,6 +38,7 @@ export default class CheckIn extends Component {
         truckType: this.state.truckType,
         checkInTime: this.state.checkInTime,
         checkOutTime: this.state.checkOutTime,
+        isCheckedIn: true,
         done: false
       }
     })
@@ -49,7 +51,8 @@ export default class CheckIn extends Component {
           deliveryTypes: [...this.state.deliveryTypes, data.data],
           truckTypes: [...this.state.truckTypes, data.data],
           checkInTimes: [...this.state.checkInTimes, data.data],
-          checkOutTimes: [...this.state.checkOutTime, data.data],
+          checkOutTimes: [...this.state.checkOutTimes, data.data],
+          isCheckedIn: [...this.state.isCheckedIn, data.data],
           _id: "",
           date: "",
           driverName: "",
@@ -57,7 +60,8 @@ export default class CheckIn extends Component {
           deliveryType: "",
           truckType: "",
           checkInTime: "",
-          checkOutTime: ""
+          checkOutTime: "",
+          isCheckedIn: true
         });
       })
       .catch(error => {
@@ -71,7 +75,8 @@ export default class CheckIn extends Component {
       deliveryType: "Delivery",
       truckType: "LTL",
       checkInTime: moment().format("LT"),
-      checkOutTime: ""
+      checkOutTime: "",
+      isDeleted: false
     });
   }
 
@@ -83,7 +88,7 @@ export default class CheckIn extends Component {
 
   render() {
     return (
-      <div className="check-in-form-wrapper">
+      <div className="check-in-wrapper">
         <form className="check-in" onSubmit={this.handleSubmit}>
           <div className="date">{this.state.date}</div>
           <input
@@ -122,7 +127,9 @@ export default class CheckIn extends Component {
             <option value="pick-up">Pick Up</option>
             <option value="will-call">Will Call</option>
           </select>
-          <button className="form-btn">Submit</button>
+          <button type="submit" value="Submit" className="form-btn">
+            Submit
+          </button>
         </form>
         <CheckInContainer />
       </div>

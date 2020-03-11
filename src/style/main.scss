@@ -24,6 +24,10 @@ body {
 .app {
   display: grid;
   justify-items: center;
+  min-height: 100vh;
 }
 
 @import "header";
+@import "check-in";
+@import "check-in-container";
+@import "footer";
