@@ -3,7 +3,7 @@ import axios from "axios";
 import moment from "moment";
 
 import CheckIn from "./check-in-form";
-// import CheckInItems from "./checkin-items";
+import CheckInItems from "./checkin-items";
 
 export default class CheckInContainer extends Component {
   constructor(props) {
@@ -16,31 +16,46 @@ export default class CheckInContainer extends Component {
     // };
     this.state = {
       checkInInfo: [],
-      isCheckedIn: true
+      isCheckedIn: true,
+      isLoading: true
     };
     this.updateCheckOutTime = this.updateCheckOutTime.bind(this);
     this.getDriverCheckIn = this.getDriverCheckIn.bind(this);
+    this.driverCheckinItems = this.driverCheckinItems.bind(this);
   }
 
   getDriverCheckIn() {
-    // for (let i = 0, l = this.state.checkInInfo.length; i < l; i++) {
-    //   var obj = this.state.checkInInfo[i].isCheckedIn;
-    //   console.log(obj);
-    // }
-    // if (this.state.isCheckedIn === true) {
     axios
       .get("http://localhost:4000/check-in")
       .then(response => {
+        console.log("response", response.data);
         this.setState({
-          checkInInfo: response.data
+          checkInInfo: response.data,
+          isLoading: false
         });
       })
       .catch(error => {
         console.log(error);
       });
-    // } else {
-    //   return null;
-    // }
+  }
+
+  driverCheckinItems() {
+    return this.state.checkInInfo.map(items => {
+      return (
+        <CheckInItems
+          key={items._id}
+          _id={items._id}
+          items={items}
+          // driverName={items.driverName}
+          // carrier={items.carrier}
+          // deliveryType={items.deliveryType}
+          // truckType={items.truckType}
+          // checkInTime={items.checkInTime}
+          updateCheckOutTime={this.updateCheckOutTime}
+          removeEntry={this.removeEntry}
+        />
+      );
+    });
   }
 
   updateCheckOutTime(_id) {
@@ -75,8 +90,8 @@ export default class CheckInContainer extends Component {
   }
 
   updateState() {
-    // setInterval(this.getDriverCheckIn, 2000);
-    this.getDriverCheckIn();
+    setInterval(this.getDriverCheckIn, 2000);
+    // this.getDriverCheckIn();
   }
 
   componentDidMount() {
@@ -87,38 +102,11 @@ export default class CheckInContainer extends Component {
     clearInterval(this.updateState);
   }
 
-  updateApi() {
-    // for (let i = 0, l = this.state.checkInInfo.length; i < l; i++) {
-    //   var obj = this.state.checkInInfo[i].isCheckedIn;
-    //   console.log(obj);
-    // }
-
-    // //HAVE TO CREATE ELSE STATEMENT THAT JUST REMOVES THAT ITEM FROM STATE
-    // if (obj === true) {
-    return this.state.checkInInfo.map(items => {
-      return (
-        <div className="driver-items" key={items._id}>
-          <span>{items.driverName}</span>
-          <span>{items.carrier}</span>
-          <span>{items.deliveryType}</span>
-          <span>{items.truckType}</span>
-          <span>{items.checkInTime}</span>
-          <button
-            className="driver-checkout"
-            onClick={() => this.updateCheckOutTime(items._id)}
-          >
-            Check Out
-          </button>
-        </div>
-      );
-    });
-    // } else {
-    //   return null;
-    // }
-  }
-
   render() {
     // console.log("state value", this.state.checkInInfo[0]);
-    return <div>{this.updateApi()}</div>;
+    if (this.state.isLoading) {
+      return <div>Loading....</div>;
+    }
+    return <div>{this.driverCheckinItems()}</div>;
   }
 }

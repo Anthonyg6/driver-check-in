@@ -76,7 +76,7 @@ export default class CheckIn extends Component {
       truckType: "LTL",
       checkInTime: moment().format("LT"),
       checkOutTime: "",
-      isDeleted: false
+      isCheckedIn: false
     });
   }
 
