@@ -46,11 +46,6 @@ export default class CheckInContainer extends Component {
           key={items._id}
           _id={items._id}
           items={items}
-          // driverName={items.driverName}
-          // carrier={items.carrier}
-          // deliveryType={items.deliveryType}
-          // truckType={items.truckType}
-          // checkInTime={items.checkInTime}
           updateCheckOutTime={this.updateCheckOutTime}
           removeEntry={this.removeEntry}
         />
@@ -90,8 +85,8 @@ export default class CheckInContainer extends Component {
   }
 
   updateState() {
-    setInterval(this.getDriverCheckIn, 2000);
-    // this.getDriverCheckIn();
+    // setInterval(this.getDriverCheckIn, 2000);
+    this.getDriverCheckIn();
   }
 
   componentDidMount() {

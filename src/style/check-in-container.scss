@@ -1,4 +1,17 @@
-// .check-in-container {
-//   overflow: auto;
-//   padding-bottom: 100px;
-// }
+.check-in-wrapper {
+  display: grid;
+  width: 90%;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: 15px 30px 20px 200px;
+
+  .check-in-form {
+    grid-column: 2 / 4;
+    justify-self: center;
+    // padding-left: 50px;
+    .date {
+      text-align: center;
+      //   padding-top: 5px;
+      //   padding-bottom: 15px;
+    }
+  }
+}
