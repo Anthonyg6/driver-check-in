@@ -1,9 +1,7 @@
 .footer-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  grid-area: footer;
+  background-color: red;
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  background: black;
-  position: relative;
-  height: 50px;
 }

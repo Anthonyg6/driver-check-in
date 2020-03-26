@@ -85,13 +85,11 @@ export default class CheckIn extends Component {
       [event.target.name]: event.target.value
     });
   }
-
+  //// <div className="date">{this.state.date}</div>
   render() {
     return (
       <div className="check-in-wrapper">
         <form className="check-in-form" onSubmit={this.handleSubmit}>
-          <div className="date">{this.state.date}</div>
-
           <input
             className="driver"
             type="text"
@@ -100,7 +98,6 @@ export default class CheckIn extends Component {
             value={this.state.driverName}
             onChange={this.handleChange}
           />
-
           <input
             className="carrier"
             type="text"
@@ -109,7 +106,6 @@ export default class CheckIn extends Component {
             value={this.state.carrier}
             onChange={this.handleChange}
           />
-
           <select
             name="truckType"
             value={this.state.truckType}
@@ -119,7 +115,6 @@ export default class CheckIn extends Component {
             <option value="ltl">LTL</option>
             <option value="tl">TL</option>
           </select>
-
           <select
             name="deliveryType"
             value={this.state.deliveryType}
@@ -130,7 +125,6 @@ export default class CheckIn extends Component {
             <option value="pick-up">Pick Up</option>
             <option value="will-call">Will Call</option>
           </select>
-
           <button type="submit" value="Submit" className="form-btn">
             Submit
           </button>

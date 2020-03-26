@@ -1,9 +1,11 @@
 .header {
+  grid-area: header;
+  width: 100%;
   padding: 10px;
   height: 120px;
-  width: 100%;
   text-align: center;
   background-color: rgb(171, 167, 167);
+
   .nav-bar {
     display: flex;
     justify-content: flex-end;

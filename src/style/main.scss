@@ -23,6 +23,11 @@ body {
 
 .app {
   display: grid;
+  grid-template-areas:
+    "header header header header header"
+    "form form content content content"
+    "footer footer footer footer footer";
+  grid-gap: 5px;
   justify-items: center;
   min-height: 100vh;
 }
