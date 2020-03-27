@@ -126,7 +126,7 @@ export default class CheckIn extends Component {
             <option value="will-call">Will Call</option>
           </select>
           <button type="submit" value="Submit" className="form-btn">
-            Submit
+            Check In
           </button>
         </form>
         <CheckInContainer />
