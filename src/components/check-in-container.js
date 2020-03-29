@@ -9,11 +9,6 @@ export default class CheckInContainer extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   checkInInfo: []
-    //   // isCheckedIn: true,
-    //   // updatedState: []
-    // };
     this.state = {
       checkInInfo: [],
       isCheckedIn: true,
@@ -98,10 +93,9 @@ export default class CheckInContainer extends Component {
   }
 
   render() {
-    // console.log("state value", this.state.checkInInfo[0]);
     if (this.state.isLoading) {
       return <div>Loading....</div>;
     }
-    return <div>{this.driverCheckinItems()}</div>;
+    return <div className="container">{this.driverCheckinItems()}</div>;
   }
 }

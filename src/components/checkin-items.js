@@ -13,12 +13,12 @@ export default function(props) {
 
   if (isCheckedIn === true) {
     return (
-      <div>
-        <span>{driverName}</span>
-        <span>{carrier}</span>
-        <span>{deliveryType}</span>
-        <span>{truckType}</span>
-        <span>{checkInTime}</span>
+      <div className="container-items">
+        <div className="items">{driverName} </div>
+        <div className="items">{carrier}</div>
+        <div className="items">{deliveryType}</div>
+        <div className="items">{truckType}</div>
+        <div className="items">{checkInTime}</div>
         <button
           className="driver-checkout"
           onClick={() => props.updateCheckOutTime(_id)}

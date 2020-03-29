@@ -15,6 +15,7 @@ export default class App extends Component {
       <div className="app">
         <Header />
         <CheckInForm />
+        <CheckInContainer />
         <Footer />
       </div>
     );

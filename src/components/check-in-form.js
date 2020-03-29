@@ -129,7 +129,6 @@ export default class CheckIn extends Component {
             Check In
           </button>
         </form>
-        <CheckInContainer />
       </div>
     );
   }
