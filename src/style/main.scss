@@ -27,9 +27,10 @@ body {
     "header header header header header"
     "form form content content content"
     "footer footer footer footer footer";
-  grid-gap: 5px;
+
   justify-items: center;
   min-height: 100vh;
+  min-width: 100vw;
 }
 
 @import "header";

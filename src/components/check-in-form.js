@@ -112,8 +112,8 @@ export default class CheckIn extends Component {
             onChange={this.handleChange}
             className="truck-type"
           >
-            <option value="ltl">LTL</option>
-            <option value="tl">TL</option>
+            <option value="LTL">LTL</option>
+            <option value="TL">TL</option>
           </select>
           <select
             name="deliveryType"
@@ -121,9 +121,9 @@ export default class CheckIn extends Component {
             onChange={this.handleChange}
             className="delivery-type"
           >
-            <option value="delivery">Delivery</option>
-            <option value="pick-up">Pick Up</option>
-            <option value="will-call">Will Call</option>
+            <option value="Delivery">Delivery</option>
+            <option value="Pick-Up">Pick Up</option>
+            <option value="Will-Call">Will Call</option>
           </select>
           <button type="submit" value="Submit" className="form-btn">
             Check In

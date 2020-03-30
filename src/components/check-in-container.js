@@ -80,8 +80,8 @@ export default class CheckInContainer extends Component {
   }
 
   updateState() {
-    // setInterval(this.getDriverCheckIn, 2000);
-    this.getDriverCheckIn();
+    setInterval(this.getDriverCheckIn, 2000);
+    // this.getDriverCheckIn();
   }
 
   componentDidMount() {

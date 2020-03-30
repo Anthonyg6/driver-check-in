@@ -1,14 +1,26 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   grid-area: content;
-  margin-top: 50px;
+  margin-left: 600px;
+  margin-top: 215px;
+  position: absolute;
 }
 .container-items {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  align-items: flex-start;
+
+  margin: 1px;
+  width: 500px;
+  height: 20px;
+  overflow-y: scroll;
   .items {
     // continue adding to this.
     margin: 2px;
-    text-transform: initial;
+    // text-transform: uppercase;
+  }
+  .items .deliveryType {
+    text-transform: capitalize;
   }
 }

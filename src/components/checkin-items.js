@@ -16,8 +16,8 @@ export default function(props) {
       <div className="container-items">
         <div className="items">{driverName} </div>
         <div className="items">{carrier}</div>
-        <div className="items">{deliveryType}</div>
-        <div className="items">{truckType}</div>
+        <div className="items deliveryType">{deliveryType}</div>
+        <div className="items truckType">{truckType}</div>
         <div className="items">{checkInTime}</div>
         <button
           className="driver-checkout"
