@@ -1,4 +1,5 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function(props) {
   const {
@@ -23,7 +24,7 @@ export default function(props) {
           className="driver-checkout"
           onClick={() => props.updateCheckOutTime(_id)}
         >
-          Check Out
+          <FontAwesomeIcon icon="truck" />
         </button>
       </div>
     );

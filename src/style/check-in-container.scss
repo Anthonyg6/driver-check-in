@@ -3,24 +3,36 @@
   flex-direction: column;
   justify-content: flex-start;
   grid-area: content;
-  margin-left: 600px;
-  margin-top: 215px;
+  margin-left: 900px;
+  margin-top: 260px;
   position: absolute;
+  height: 380px;
+  overflow-y: scroll;
 }
 .container-items {
   display: flex;
   align-items: flex-start;
 
   margin: 1px;
-  width: 500px;
+  width: 600px;
   height: 20px;
-  overflow-y: scroll;
+  font-size: 15px;
+  margin-bottom: 5px;
+
   .items {
     // continue adding to this.
-    margin: 2px;
+    margin: 5px;
+
     // text-transform: uppercase;
   }
   .items .deliveryType {
     text-transform: capitalize;
+  }
+  .driver-checkout {
+    text-decoration: none;
+    color: #004d72;
+    border: none;
+    margin-left: 8px;
+    margin-top: 5px;
   }
 }

@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import axios from "axios";
-import moment from "moment";
 import Header from "./header";
 import CheckInForm from "./check-in-form";
 import Footer from "./footer";
 import CheckInContainer from "./check-in-container";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faTruck } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faTruck);
 
 export default class App extends Component {
   constructor() {
@@ -12,7 +14,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div className="app">
+      <div className="app w3-container">
         <Header />
         <CheckInForm />
         <CheckInContainer />
