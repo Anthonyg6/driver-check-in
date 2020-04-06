@@ -11,8 +11,7 @@ export default class CheckInContainer extends Component {
 
     this.state = {
       checkInInfo: [],
-      isCheckedIn: true,
-      isLoading: true
+      isLoading: true,
     };
     this.updateCheckOutTime = this.updateCheckOutTime.bind(this);
     this.getDriverCheckIn = this.getDriverCheckIn.bind(this);
@@ -22,20 +21,20 @@ export default class CheckInContainer extends Component {
   getDriverCheckIn() {
     axios
       .get("http://localhost:4000/check-in")
-      .then(response => {
-        console.log("response", response.data);
+      .then((response) => {
         this.setState({
           checkInInfo: response.data,
-          isLoading: false
+          isLoading: false,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
 
   driverCheckinItems() {
-    return this.state.checkInInfo.map(items => {
+    console.log(this.state);
+    return this.state.checkInInfo.map((items) => {
       return (
         <CheckInItems
           key={items._id}
@@ -53,18 +52,18 @@ export default class CheckInContainer extends Component {
     axios
       .put(`http://localhost:4000/check-in/${_id}`, {
         checkOutTime: moment().format("LT"),
-        isCheckedIn: false
+        isCheckedIn: false,
       })
-      .then(response => {
+      .then((response) => {
         this.setState({
-          checkInInfo: this.state.checkInInfo.filter(checkInItem => {
+          checkInInfo: this.state.checkInInfo.filter((checkInItem) => {
             return _id !== checkInItem._id;
           }),
-          isCheckedIn: false
+          isCheckedIn: false,
         });
         return response.data;
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -74,7 +73,7 @@ export default class CheckInContainer extends Component {
     axios
       .delete(`http://localhost:4000/check-in/${_id}`)
       .then(console.log("Driver removed!"))
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -94,7 +93,7 @@ export default class CheckInContainer extends Component {
 
   render() {
     if (this.state.isLoading) {
-      return <div>Loading....</div>;
+      return <div className="data-loading">Loading....</div>;
     }
     return <div className="container">{this.driverCheckinItems()}</div>;
   }

@@ -2,9 +2,11 @@
   grid-area: header;
   width: 100%;
   padding: 10px;
-  height: 120px;
+  height: 125px;
   text-align: center;
-  background-color: rgb(171, 167, 167);
+  background-color: rgb(148, 148, 148);
+  border-bottom-style: solid;
+  border-color: #e2211c;
 
   .nav-bar {
     display: flex;
@@ -19,6 +21,7 @@
     margin-left: 0px;
     margin-right: auto;
     text-decoration: none;
+    font-size: small;
   }
   a:hover {
     transition: 0.5s;
@@ -27,6 +30,7 @@
   }
   .contact {
     padding-right: 20px;
+    font-size: small;
   }
   .contact:hover {
     transition: 0.5s;

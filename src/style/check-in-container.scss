@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: flex-start;
   grid-area: content;
-  margin-left: 900px;
-  margin-top: 260px;
+  margin-left: 860px;
+  margin-top: 225px;
   position: absolute;
   height: 380px;
   overflow-y: scroll;
@@ -30,7 +30,9 @@
   }
   .driver-checkout {
     text-decoration: none;
-    color: #004d72;
+    // color: #004d72;
+    color: red;
+    background: none;
     border: none;
     margin-left: 8px;
     margin-top: 5px;

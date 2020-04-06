@@ -16,7 +16,7 @@ export default class CheckIn extends Component {
       truckType: "LTL",
       checkInTime: moment().format("LT"),
       checkOutTime: "",
-      isCheckedIn: false
+      isCheckedIn: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -39,10 +39,10 @@ export default class CheckIn extends Component {
         checkInTime: this.state.checkInTime,
         checkOutTime: this.state.checkOutTime,
         isCheckedIn: true,
-        done: false
-      }
+        done: false,
+      },
     })
-      .then(data => {
+      .then((data) => {
         this.setState({
           _ids: [...this.state._ids, data.data],
           dates: [...this.state.dates, data.data],
@@ -61,10 +61,10 @@ export default class CheckIn extends Component {
           truckType: "",
           checkInTime: "",
           checkOutTime: "",
-          isCheckedIn: true
+          isCheckedIn: true,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
     this.setState({
@@ -76,13 +76,13 @@ export default class CheckIn extends Component {
       truckType: "LTL",
       checkInTime: moment().format("LT"),
       checkOutTime: "",
-      isCheckedIn: false
+      isCheckedIn: false,
     });
   }
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
   //// <div className="date">{this.state.date}</div>
