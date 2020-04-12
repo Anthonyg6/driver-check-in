@@ -95,6 +95,10 @@ export default class CheckInContainer extends Component {
     if (this.state.isLoading) {
       return <div className="data-loading">Loading....</div>;
     }
-    return <div className="container">{this.driverCheckinItems()}</div>;
+    return (
+      <div className="w3-container w3-half w3-row container">
+        {this.driverCheckinItems()}
+      </div>
+    );
   }
 }

@@ -38,3 +38,34 @@
     color: rgb(169, 2, 2);
   }
 }
+
+@media (max-width: 615px) {
+  .header {
+    height: 65%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    img {
+      // max-width: 50%;
+      height: auto;
+      align-self: center;
+    }
+    .nav-bar {
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-bar > .link {
+      order: 2;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 80px;
+      font-size: 2rem;
+    }
+    .nav-bar > .contact {
+      order: 1;
+      margin-top: 20px;
+      font-size: 2rem;
+    }
+  }
+}

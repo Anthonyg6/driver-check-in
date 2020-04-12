@@ -14,7 +14,7 @@ export default function (props) {
 
   if (isCheckedIn === true) {
     return (
-      <div className="container-items">
+      <div className="w3-container w3-left-align w3-center w3-row container-items">
         <div className="items">{driverName} </div>
         <div className="items">{carrier}</div>
         <div className="items deliveryType">{deliveryType}</div>
