@@ -1,10 +1,14 @@
 .check-in-wrapper {
-  margin-top: 200px;
-  margin-left: 150px;
-  position: absolute;
+  grid-column: form-s/form-e;
+  grid-row: content-s/content-e;
+  align-self: center;
+  // margin-top: 200px;
+  // margin-left: 150px;
+  // position: absolute;
 
   .check-in-form {
-    grid-area: form;
+    // grid-area: form;
+
     display: flex;
     flex-direction: column;
     font-family: "Open Sans Condensed", arial, sans;
@@ -54,5 +58,21 @@
     margin-left: 10px;
     height: 40px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .check-in-wrapper {
+    display: grid;
+    grid-template-columns: 50px [content-s] 668px [content-e] 50px;
+    padding-top: 5px;
+    justify-items: center;
+    margin-left: -1px;
+    .check-in-form {
+      grid-column: content-s/content-e;
+      padding: 20px;
+      width: 600px;
+      // height: 100%;
+    }
   }
 }

@@ -14,7 +14,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div className="app w3-content w3-row">
+      <div className="app">
         <Header />
         <CheckInForm />
         <CheckInContainer />

@@ -88,7 +88,7 @@ export default class CheckIn extends Component {
   //// <div className="date">{this.state.date}</div>
   render() {
     return (
-      <div className="w3-container w3-half w3-center w3-row check-in-wrapper">
+      <div className="check-in-wrapper">
         <form className="check-in-form w3-block" onSubmit={this.handleSubmit}>
           <input
             className="driver"
