@@ -47,18 +47,16 @@
 
 @media (max-width: 768px) {
   .container {
-    display: flex;
-    flex-direction: column-reverse;
-    padding-top: 400px;
-
-    // display: grid;
-    // grid-template-columns: 120px [items-s] 600px [items-e] 120px;
-    // grid-template-rows: [row1-s] 1fr [row1-e row2-s] 1fr [row2-e];
+    order: 3;
+    height: 30vh;
+    padding-left: 1px;
   }
   .container-items {
-    justify-content: flex-end;
-    align-content: center;
+    margin-left: 60px;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    align-items: center;
     font-size: 2rem;
-    height: 400px;
+    // height: 400px;
   }
 }

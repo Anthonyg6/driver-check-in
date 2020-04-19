@@ -12,3 +12,10 @@
   color: white;
   background-color: #004d72;
 }
+
+@media (max-width: 768px) {
+  .footer-wrapper {
+    order: 4;
+    font-size: 2rem;
+  }
+}
