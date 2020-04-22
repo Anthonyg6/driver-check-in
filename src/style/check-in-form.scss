@@ -69,10 +69,13 @@
       grid-template-rows: 1fr 1fr 1fr 1fr;
       width: 95vw;
       padding: 12px;
+      height: 300px;
 
       input[type="text"] {
         font-size: 2rem;
         grid-column: 1/4;
+        padding: 10px;
+        height: 40px;
       }
       select {
         grid-column: 1/2;
@@ -81,6 +84,9 @@
         height: 45px;
         margin-top: 10px;
         width: 100%;
+        padding: 10px;
+        height: 40px;
+        font-size: 16px;
       }
       .form-btn {
         grid-column: 2/4;
