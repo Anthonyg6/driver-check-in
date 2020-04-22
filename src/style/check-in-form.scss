@@ -2,21 +2,17 @@
   grid-column: form-s/form-e;
   grid-row: content-s/content-e;
   align-self: center;
-  // margin-top: 200px;
-  // margin-left: 150px;
-  // position: absolute;
 
   .check-in-form {
-    // grid-area: form;
-
     display: flex;
     flex-direction: column;
     font-family: "Open Sans Condensed", arial, sans;
-    width: 500px;
+    width: 600px;
+    height: 400px;
     background: #ffffff;
-    // background-color: #3c4543;
+
     margin: 70px auto;
-    padding: 45px;
+    padding: 50px;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.447);
     -moz-box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.447);
     -webkit-box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.447);
@@ -29,8 +25,8 @@
       border: none;
       color: #ffffff;
       text-align: center;
-      font-size: 12px;
-      padding: 8px;
+      font-size: 17px;
+      padding: 20px;
       width: 100px;
       transition: all 0.5s;
       cursor: pointer;
@@ -39,8 +35,8 @@
   }
   input[type="text"] {
     margin: 10px;
-    padding: 10px;
-    font-size: 15px;
+    padding: 17px;
+    font-size: 17px;
   }
   select {
     box-sizing: border-box;
@@ -49,15 +45,15 @@
     outline: none;
     display: block;
     width: 75%;
-    padding: 10px;
+    // padding: 20px;
     border: none;
     border-bottom: 2px solid #e2211c;
     background: ffffff;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 10px;
-    height: 40px;
-    font-size: 12px;
+    height: 55px;
+    font-size: 17px;
   }
 }
 

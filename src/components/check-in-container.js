@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import moment from "moment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import CheckIn from "./check-in-form";
 import CheckInItems from "./checkin-items";
 
 export default class CheckInContainer extends Component {
@@ -93,7 +93,11 @@ export default class CheckInContainer extends Component {
 
   render() {
     if (this.state.isLoading) {
-      return <div className="data-loading">Loading....</div>;
+      return (
+        <div className="data-loading">
+          <FontAwesomeIcon icon="spinner" className="fa-pulse" />
+        </div>
+      );
     }
     return <div className="container">{this.driverCheckinItems()}</div>;
   }

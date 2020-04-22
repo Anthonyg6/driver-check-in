@@ -4,9 +4,9 @@ import CheckInForm from "./check-in-form";
 import Footer from "./footer";
 import CheckInContainer from "./check-in-container";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faTruck } from "@fortawesome/free-solid-svg-icons";
+import { faTruck, faSpinner } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faTruck);
+library.add(faTruck, faSpinner);
 
 export default class App extends Component {
   constructor() {
