@@ -20,7 +20,7 @@ export default class CheckInContainer extends Component {
 
   getDriverCheckIn() {
     axios
-      .get("driver-check-in-server/check-in")
+      .get("driver-check-in-server.herokuapp.com/check-in")
       .then((response) => {
         this.setState({
           checkInInfo: response.data,
@@ -70,7 +70,7 @@ export default class CheckInContainer extends Component {
   removeEntry(_id) {
     event.preventDefault();
     axios
-      .delete(`driver-check-in-server/check-in/${_id}`)
+      .delete(`driver-check-in-server.herokuapp.com/check-in/${_id}`)
       .then(console.log("Driver removed!"))
       .catch((error) => {
         console.log(error);
