@@ -26,7 +26,7 @@ export default class CheckIn extends Component {
     event.preventDefault();
     axios({
       method: "POST",
-      url: "http://localhost:4000/check-in",
+      url: "http://driver-check-in-server/check-in",
       headers: { "content-type": "application/json" },
       data: {
         _id: this.state._id,

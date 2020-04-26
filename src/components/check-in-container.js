@@ -20,7 +20,7 @@ export default class CheckInContainer extends Component {
 
   getDriverCheckIn() {
     axios
-      .get("http://localhost:4000/check-in")
+      .get("driver-check-in-server/check-in")
       .then((response) => {
         this.setState({
           checkInInfo: response.data,
@@ -49,7 +49,7 @@ export default class CheckInContainer extends Component {
   updateCheckOutTime(_id) {
     event.preventDefault();
     axios
-      .put(`http://localhost:4000/check-in/${_id}`, {
+      .put(`driver-check-in-server/check-in/${_id}`, {
         checkOutTime: moment().format("LT"),
         isCheckedIn: false,
       })
@@ -70,7 +70,7 @@ export default class CheckInContainer extends Component {
   removeEntry(_id) {
     event.preventDefault();
     axios
-      .delete(`http://localhost:4000/check-in/${_id}`)
+      .delete(`driver-check-in-server/check-in/${_id}`)
       .then(console.log("Driver removed!"))
       .catch((error) => {
         console.log(error);
