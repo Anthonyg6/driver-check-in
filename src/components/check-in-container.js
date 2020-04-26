@@ -33,7 +33,6 @@ export default class CheckInContainer extends Component {
   }
 
   driverCheckinItems() {
-    console.log(this.state);
     return this.state.checkInInfo.map((items) => {
       return (
         <CheckInItems
@@ -80,7 +79,6 @@ export default class CheckInContainer extends Component {
 
   updateState() {
     setInterval(this.getDriverCheckIn, 2000);
-    // this.getDriverCheckIn();
   }
 
   componentDidMount() {

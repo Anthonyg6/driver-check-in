@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import moment, { relativeTimeThreshold } from "moment";
+import moment from "moment";
 import axios from "axios";
-import CheckInContainer from "./check-in-container";
 
 export default class CheckIn extends Component {
   constructor() {
@@ -85,7 +84,7 @@ export default class CheckIn extends Component {
       [event.target.name]: event.target.value,
     });
   }
-  //// <div className="date">{this.state.date}</div>
+
   render() {
     return (
       <div className="check-in-wrapper">
