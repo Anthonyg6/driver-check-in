@@ -1,7 +1,3 @@
-html {
-  font-size: 62.5%; // 1rem is 10px
-}
-
 *,
 *::after,
 *::before {
@@ -25,10 +21,7 @@ body {
   display: grid;
   grid-template-columns: [form-s] 1fr [form-e items-s] 1fr [items-e];
   grid-template-rows: [header-s] 140px [header-e content-s] auto [content-e footer-s] 65px [footer-e];
-  // grid-template-areas:
-  //   "header header header header header"
-  //   "form form content content content"
-  //   "footer footer footer footer footer";
+
   justify-items: center;
   min-height: 100vh;
   min-width: 100vw;

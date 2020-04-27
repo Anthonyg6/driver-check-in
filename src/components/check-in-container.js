@@ -20,7 +20,7 @@ export default class CheckInContainer extends Component {
 
   getDriverCheckIn() {
     axios
-      .get("driver-check-in-server.herokuapp.com/check-in")
+      .get("http://localhost:4000/check-in")
       .then((response) => {
         this.setState({
           checkInInfo: response.data,
