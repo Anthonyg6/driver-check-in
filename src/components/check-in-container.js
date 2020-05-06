@@ -20,7 +20,7 @@ export default class CheckInContainer extends Component {
 
   getDriverCheckIn() {
     axios
-      .get("https://driver-check-in-server.herokuapp.com/check-in")
+      .get("https://driver-check-in-server.herokuapp.com/check-in/check-ins")
       .then((response) => {
         this.setState({
           checkInInfo: response.data,
@@ -49,10 +49,13 @@ export default class CheckInContainer extends Component {
   updateCheckOutTime(_id) {
     event.preventDefault();
     axios
-      .put(`https://driver-check-in-server.herokuapp.com/check-in/${_id}`, {
-        checkOutTime: moment().format("LT"),
-        isCheckedIn: false,
-      })
+      .put(
+        `https://driver-check-in-server.herokuapp.com/check-in/check-ins/${_id}`,
+        {
+          checkOutTime: moment().format("LT"),
+          isCheckedIn: false,
+        }
+      )
       .then((response) => {
         this.setState({
           checkInInfo: this.state.checkInInfo.filter((checkInItem) => {
@@ -70,7 +73,9 @@ export default class CheckInContainer extends Component {
   removeEntry(_id) {
     event.preventDefault();
     axios
-      .delete(`https://driver-check-in-server.herokuapp.com/check-in/${_id}`)
+      .delete(
+        `https://driver-check-in-server.herokuapp.com/check-in/check-ins//${_id}`
+      )
       .then(console.log("Driver removed!"))
       .catch((error) => {
         console.log(error);
