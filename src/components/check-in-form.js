@@ -26,7 +26,7 @@ export default class CheckIn extends Component {
     event.preventDefault();
     axios({
       method: "POST",
-      url: "https://driver-check-in-server.herokuapp.com/check-in/check-ins",
+      url: "https://driver-check-in-server.herokuapp.com/check-in",
       headers: { "content-type": "application/json" },
       data: {
         _id: this.state._id,
