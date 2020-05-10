@@ -5,6 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import CheckInItems from "./checkin-items";
 
+const apiHelper = {
+  baseUrl:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:4000"
+      : "https://driver-check-in-server.herokuapp.com",
+};
+
 export default class CheckInContainer extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +27,7 @@ export default class CheckInContainer extends Component {
 
   getDriverCheckIn() {
     axios
-      .get("https://driver-check-in-server.herokuapp.com/check-in")
+      .get(`${apiHelper.baseUrl}/check-in`)
       .then((response) => {
         this.setState({
           checkInInfo: response.data,
@@ -78,12 +85,11 @@ export default class CheckInContainer extends Component {
   }
 
   updateState() {
-    // this.checkinInterval = setInterval(this.getDriverCheckIn, 2000);
+    this.checkinInterval = setInterval(this.getDriverCheckIn, 2000);
   }
 
   componentDidMount() {
-    // this.updateState();
-    this.getDriverCheckIn();
+    this.updateState();
   }
 
   componentWillUnmount() {
