@@ -84,11 +84,12 @@ export default class CheckIn extends Component {
       [event.target.name]: event.target.value,
     });
   }
+  //onSubmit={this.handleSubmit}
 
   render() {
     return (
       <div className="check-in-wrapper">
-        <form className="check-in-form w3-block" onSubmit={this.handleSubmit}>
+        <form className="check-in-form w3-block">
           <input
             className="driver"
             type="text"
@@ -124,7 +125,12 @@ export default class CheckIn extends Component {
             <option value="Pick-Up">Pick Up</option>
             <option value="Will-Call">Will Call</option>
           </select>
-          <button type="submit" value="Submit" className="form-btn">
+          <button
+            onClick={this.handleSubmit}
+            type="submit"
+            value="Submit"
+            className="form-btn"
+          >
             Check In
           </button>
         </form>
