@@ -127,6 +127,8 @@ export default class CheckIn extends Component {
           </select>
           <button
             onClick={this.handleSubmit}
+            onClick="void(0)"
+            onTouchStart={this.handleSubmit}
             type="submit"
             value="Submit"
             className="form-btn"
