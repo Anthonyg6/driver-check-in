@@ -84,7 +84,6 @@ export default class CheckIn extends Component {
       [event.target.name]: event.target.value,
     });
   }
-  //onSubmit={this.handleSubmit}
 
   render() {
     return (
@@ -127,8 +126,7 @@ export default class CheckIn extends Component {
           </select>
           <button
             onClick={this.handleSubmit}
-            onClick="void(0)"
-            onTouchStart={this.handleSubmit}
+            onTouchEnd={this.handleSubmit}
             type="submit"
             value="Submit"
             className="form-btn"
