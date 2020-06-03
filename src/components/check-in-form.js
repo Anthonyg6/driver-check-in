@@ -84,6 +84,11 @@ export default class CheckIn extends Component {
       [event.target.name]: event.target.value,
     });
   }
+  handleTouch() {
+    document
+      .getElementsByClassName("form-btn")
+      .addEventListener("touchstart", this.handleSubmit);
+  }
 
   render() {
     return (
