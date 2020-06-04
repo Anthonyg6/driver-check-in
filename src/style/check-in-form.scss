@@ -101,6 +101,16 @@
         padding: 2px;
         font-size: 1.8rem;
         height: 110px;
+        cursor: pointer;
+      }
+      .form-btn:hover {
+        background-color: blue;
+      }
+      .form-btn:focus {
+        background-color: pink;
+      }
+      .form-btn:active {
+        background-color: red;
       }
     }
   }
