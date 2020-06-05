@@ -85,13 +85,9 @@ export default class CheckIn extends Component {
     });
   }
 
-  componentDidMount() {
-    ReactDOM.find;
-  }
-
-  // //<button type="submit" value="Submit" className="form-btn">
-  // Check In
-  // </button>
+  // <button type="submit" value="Submit" className="form-btn">
+  //           Check In
+  //         </button>
   render() {
     return (
       <div className="check-in-wrapper">
