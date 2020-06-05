@@ -88,7 +88,7 @@ export default class CheckIn extends Component {
   render() {
     return (
       <div className="check-in-wrapper">
-        <form className="check-in-form" onSubmit={this.handleSubmit}>
+        <form className="check-in-form">
           <input
             className="driver"
             type="text"
@@ -124,7 +124,9 @@ export default class CheckIn extends Component {
             <option value="Pick-Up">Pick Up</option>
             <option value="Will-Call">Will Call</option>
           </select>
-          <button className="form-btn">Check In</button>
+          <div onClick={this.handleSubmit} className="form-btn">
+            Check In
+          </div>
         </form>
       </div>
     );
