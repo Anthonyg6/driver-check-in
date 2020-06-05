@@ -84,12 +84,14 @@ export default class CheckIn extends Component {
       [event.target.name]: event.target.value,
     });
   }
-  handleTouch() {
-    document
-      .getElementsByClassName("form-btn")
-      .addEventListener("touchstart", this.handleSubmit);
+
+  componentDidMount() {
+    ReactDOM.find;
   }
 
+  // //<button type="submit" value="Submit" className="form-btn">
+  // Check In
+  // </button>
   render() {
     return (
       <div className="check-in-wrapper">
@@ -129,9 +131,6 @@ export default class CheckIn extends Component {
             <option value="Pick-Up">Pick Up</option>
             <option value="Will-Call">Will Call</option>
           </select>
-          <button type="submit" value="Submit" className="form-btn">
-            Check In
-          </button>
         </form>
       </div>
     );
