@@ -85,9 +85,6 @@ export default class CheckIn extends Component {
     });
   }
 
-  // <button type="submit" value="Submit" className="form-btn">
-  //           Check In
-  //         </button>
   render() {
     return (
       <div className="check-in-wrapper">
@@ -127,6 +124,7 @@ export default class CheckIn extends Component {
             <option value="Pick-Up">Pick Up</option>
             <option value="Will-Call">Will Call</option>
           </select>
+          <button className="form-btn">Check In</button>
         </form>
       </div>
     );
