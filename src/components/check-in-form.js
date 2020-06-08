@@ -22,7 +22,11 @@ export default class CheckIn extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
+  // testingTouch(e) {
+  //   console.log("Hello World");
+  // }
+
+  handleSubmit(e) {
     event.preventDefault();
     axios({
       method: "POST",
@@ -77,6 +81,7 @@ export default class CheckIn extends Component {
       checkOutTime: "",
       isCheckedIn: false,
     });
+    console.log("i was clicked");
   }
 
   handleChange(event) {
@@ -124,7 +129,11 @@ export default class CheckIn extends Component {
             <option value="Pick-Up">Pick Up</option>
             <option value="Will-Call">Will Call</option>
           </select>
-          <div onClick={this.handleSubmit} className="form-btn">
+          <div
+            onClick={this.handleSubmit}
+            onTouchStart={this.handleSubmit}
+            className="form-btn"
+          >
             Check In
           </div>
         </form>
