@@ -129,13 +129,13 @@ export default class CheckIn extends Component {
             <option value="Pick-Up">Pick Up</option>
             <option value="Will-Call">Will Call</option>
           </select>
-          <div
+          <button
             onClick={this.handleSubmit}
             onTouchStart={this.handleSubmit}
             className="form-btn"
           >
             Check In
-          </div>
+          </button>
         </form>
       </div>
     );
