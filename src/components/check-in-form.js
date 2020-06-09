@@ -20,11 +20,12 @@ export default class CheckIn extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.testingTouch = this.testingTouch.bind(this);
   }
 
-  // testingTouch(e) {
-  //   console.log("Hello World");
-  // }
+  testingTouch(e) {
+    alert("I was clicked");
+  }
 
   handleSubmit(e) {
     event.preventDefault();
@@ -131,7 +132,7 @@ export default class CheckIn extends Component {
           </select>
           <button
             onClick={this.handleSubmit}
-            onTouchStart={this.handleSubmit}
+            onTouchStart={this.testingTouch}
             className="form-btn"
           >
             Check In
