@@ -24,7 +24,6 @@ export default class CheckIn extends Component {
   }
 
   touchEvent(e) {
-    event.preventDefault();
     axios({
       method: "POST",
       url: "https://driver-check-in-server.herokuapp.com/check-in",
@@ -78,6 +77,8 @@ export default class CheckIn extends Component {
       checkOutTime: "",
       isCheckedIn: false,
     });
+    event.stopPropagation();
+    event.preventDefault();
   }
 
   handleSubmit(e) {
