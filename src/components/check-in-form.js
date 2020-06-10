@@ -147,11 +147,7 @@ export default class CheckIn extends Component {
   render() {
     return (
       <div className="check-in-wrapper">
-        <form
-          className="check-in-form"
-          onSubmit={this.handleSubmit}
-          onTouchStart={this.touchEvent}
-        >
+        <form className="check-in-form" onSubmit={this.handleSubmit}>
           <input
             className="driver"
             type="text"
