@@ -24,6 +24,7 @@ export default class CheckIn extends Component {
   }
 
   touchEvent(e) {
+    // event.preventDefault();
     axios({
       method: "POST",
       url: "https://driver-check-in-server.herokuapp.com/check-in",
@@ -77,8 +78,7 @@ export default class CheckIn extends Component {
       checkOutTime: "",
       isCheckedIn: false,
     });
-    event.stopPropagation();
-    event.preventDefault();
+    alert("Driver has been submitted");
   }
 
   handleSubmit(e) {
@@ -183,7 +183,12 @@ export default class CheckIn extends Component {
             <option value="Pick-Up">Pick Up</option>
             <option value="Will-Call">Will Call</option>
           </select>
-          <input type="button" value="CheckIn" onClick={this.handleSubmit} />
+          <input
+            type="button"
+            value="CheckIn"
+            onClick={this.handleSubmit}
+            onTouchStart={this.touchEvent}
+          />
         </form>
       </div>
     );
