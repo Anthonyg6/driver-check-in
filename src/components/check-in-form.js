@@ -24,8 +24,15 @@ export default class CheckIn extends Component {
   }
 
   touchEvent(e) {
-    // event.preventDefault();
-    console.log("from submit");
+    event.preventDefault();
+    axios
+      .post("https://driver-check-in-server.herokuapp.com/check-in")
+      .then((response) => {
+        console.log("form submitted");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   handleSubmit(e) {
