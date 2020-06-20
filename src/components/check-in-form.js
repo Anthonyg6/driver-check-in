@@ -25,7 +25,7 @@ export default class CheckIn extends Component {
 
   touchEvent(e) {
     // event.preventDefault();
-    alert("Driver has checked in!");
+    console.log("from submit");
   }
 
   handleSubmit(e) {
