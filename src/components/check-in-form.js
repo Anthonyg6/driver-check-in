@@ -23,18 +23,6 @@ export default class CheckIn extends Component {
     this.touchEvent = this.touchEvent.bind(this);
   }
 
-  touchEvent(e) {
-    event.preventDefault();
-    axios
-      .post("https://driver-check-in-server.herokuapp.com/check-in")
-      .then((response) => {
-        console.log("form submitted");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
   handleSubmit(e) {
     event.preventDefault();
     axios({
@@ -142,7 +130,7 @@ export default class CheckIn extends Component {
             className="form-btn"
             value="CheckIn"
             onClick={this.handleSubmit}
-            onTouchEnd={this.touchEvent}
+            onTouchStart={this.touchEvent}
           />
         </form>
       </div>
