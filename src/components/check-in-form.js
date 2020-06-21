@@ -129,7 +129,7 @@ export default class CheckIn extends Component {
             className="form-btn"
             value="CheckIn"
             onClick={this.handleSubmit}
-            onTouchStart={this.touchEvent}
+            onTouchStart={this.handleSubmit}
           />
         </form>
       </div>
