@@ -20,7 +20,6 @@ export default class CheckIn extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.touchEvent = this.touchEvent.bind(this);
   }
 
   handleSubmit(e) {
