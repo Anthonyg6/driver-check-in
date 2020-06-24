@@ -89,7 +89,7 @@ export default class CheckIn extends Component {
   render() {
     return (
       <div className="check-in-wrapper">
-        <form className="check-in-form" onSubmit={this.handleSubmit}>
+        <form className="check-in-form">
           <input
             className="driver"
             type="text"
@@ -129,8 +129,8 @@ export default class CheckIn extends Component {
             type="button"
             className="form-btn"
             value="CheckIn"
-            // onClick={this.handleSubmit}
-            // onTouchStart={this.handleSubmit}
+            onClick={this.handleSubmit}
+            onTouchStart={this.handleSubmit}
           />
         </form>
       </div>
