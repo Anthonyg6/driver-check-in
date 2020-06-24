@@ -77,6 +77,7 @@ export default class CheckIn extends Component {
       checkOutTime: "",
       isCheckedIn: false,
     });
+    alert("Driver has checked in!");
   }
 
   handleChange(event) {
