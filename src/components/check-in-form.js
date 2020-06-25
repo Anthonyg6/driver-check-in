@@ -80,6 +80,7 @@ export default class CheckIn extends Component {
     });
     alert("Driver has checked in!");
   }
+
   handleSubmit(e) {
     event.preventDefault();
     axios({
@@ -183,7 +184,7 @@ export default class CheckIn extends Component {
             <option value="Pick-Up">Pick Up</option>
             <option value="Will-Call">Will Call</option>
           </select>
-          <input
+          <button
             type="button"
             className="form-btn"
             value="CheckIn"
