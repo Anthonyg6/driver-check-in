@@ -89,7 +89,7 @@ export default class CheckIn extends Component {
   render() {
     return (
       <div className="check-in-wrapper">
-        <form className="check-in-form">
+        <form className="check-in-form" onSubmit={this.handleSubmit}>
           <input
             className="driver"
             type="text"
@@ -125,12 +125,7 @@ export default class CheckIn extends Component {
             <option value="Pick-Up">Pick Up</option>
             <option value="Will-Call">Will Call</option>
           </select>
-          <input
-            type="button"
-            className="form-btn"
-            value="CheckIn"
-            onClick={this.handleSubmit}
-          />
+          <input type="submit" className="form-btn" value="CheckIn" />
         </form>
       </div>
     );
