@@ -43,15 +43,15 @@ export default class CheckIn extends Component {
     })
       .then((data) => {
         this.setState({
-          _id: [...this.state._id, data.data],
-          date: [...this.state.date, data.data],
-          driverName: [...this.state.driverName, data.data],
-          carrier: [...this.state.carrier, data.data],
-          deliveryType: [...this.state.deliveryType, data.data],
-          truckType: [...this.state.truckType, data.data],
-          checkInTime: [...this.state.checkInTime, data.data],
-          checkOutTime: [...this.state.checkOutTime, data.data],
-          isCheckedIn: [...this.state.isCheckedIn, data.data],
+          _ids: [...this.state._ids, data.data],
+          dates: [...this.state.dates, data.data],
+          driverNames: [...this.states.driverName, data.data],
+          carriers: [...this.state.carriers, data.data],
+          deliveryTypes: [...this.state.deliveryTypes, data.data],
+          truckTypes: [...this.state.truckTypes, data.data],
+          checkInTimes: [...this.state.checkInTimes, data.data],
+          checkOutTimes: [...this.state.checkOutTimes, data.data],
+          isCheckedIns: [...this.state.isCheckedIns, data.data],
           _id: "",
           date: "",
           driverName: "",
@@ -66,7 +66,6 @@ export default class CheckIn extends Component {
       .catch((error) => {
         console.log(error);
       });
-    console.log(this.state);
     this.setState({
       _id: "",
       date: moment().format("MMM DD YYYY"),
@@ -125,7 +124,7 @@ export default class CheckIn extends Component {
             <option value="Pick-Up">Pick Up</option>
             <option value="Will-Call">Will Call</option>
           </select>
-          <input type="submit" className="form-btn" value="CheckIn" />
+          <button type="submit" className="form-btn" value="CheckIn" />
         </form>
       </div>
     );
