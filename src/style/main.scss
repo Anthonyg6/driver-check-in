@@ -39,15 +39,15 @@ body {
   min-height: 100vh;
   min-width: 100vw;
 
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    min-height: 100vh;
-    min-width: 100vw;
-    // overflow-y: hidden;
-  }
+  // @media (max-width: 768px) {
+  //   display: flex;
+  //   flex-direction: column;
+  //   flex-wrap: nowrap;
+  //   justify-content: flex-start;
+  //   min-height: 100vh;
+  //   min-width: 100vw;
+  //   // overflow-y: hidden;
+  // }
 }
 
 @import "header";
