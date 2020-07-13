@@ -40,27 +40,27 @@
   color: #004d72;
 }
 
-// @media (max-width: 768px) {
-//   .container {
-//     order: 3;
-//     height: 25vh;
-//     padding-left: 1px;
-//   }
-//   .container-items {
-//     display: none;
-//     // margin-left: 60px;
-//     // justify-content: flex-start;
-//     // margin-bottom: 10px;
-//     // align-items: center;
-//     font-size: 1.3rem;
-//     // height: 400px;
-//   }
+@media (max-width: 768px) {
+  .container {
+    order: 3;
+    height: 25vh;
+    padding-left: 1px;
+  }
+  .container-items {
+    display: none;
+    // margin-left: 60px;
+    // justify-content: flex-start;
+    // margin-bottom: 10px;
+    // align-items: center;
+    font-size: 1.3rem;
+    // height: 400px;
+  }
 
-//   .data-loading {
-//     display: none;
-//     //   font-size: 5rem;
-//     //   order: 3;
-//     //   align-self: center;
-//     //   color: #004d72;
-//   }
-// }
+  .data-loading {
+    display: none;
+    //   font-size: 5rem;
+    //   order: 3;
+    //   align-self: center;
+    //   color: #004d72;
+  }
+}
